@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS vehicle_rate (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  plot_id INT NOT NULL,
+  rate_type ENUM('hourly','daily','monthly') NOT NULL,
+  min_hours INT NULL,
+  max_hours INT NULL,
+  rate DECIMAL(10,2) NOT NULL,
+  created_uid INT NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_uid INT NOT NULL,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deleted_uid INT NULL,
+  deleted_at TIMESTAMP NULL DEFAULT NULL
+);
